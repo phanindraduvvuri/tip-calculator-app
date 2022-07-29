@@ -96,8 +96,28 @@ html {
 
 body {
   font-size: 1.6rem;
+  font-family: "Space Mono", monospace;
+  background-color: var(--light-grayish-cyan);
 }
 
 form {
   font-size: var(--font-size__form-inputs);
+}
+
+.tip-calculator__wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+  height: 100vh;
+}
+
+#main-header {
+  letter-spacing: 3px;
+  font-size: 1.6rem;
+  color: var(--very-dark-cyan);
+}
+
+.tip-calculator {
 }
