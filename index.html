@@ -35,14 +35,72 @@
         <br />
         TTER
       </h1>
-      <div class="tip-calculator"></div>
+      <div class="tip-calculator">
+        <div class="tip__form">
+          <div class="tip__form--bill">
+            <label for="bill-input" class="input-label">Bill</label>
+            <input
+              class="text-form text-form__bill"
+              type="number"
+              id="bill-input"
+              name="bill"
+            />
+          </div>
+
+          <label for="tip-select" class="input-label">Select Tip %</label>
+          <div id="tip-select" class="tip__form--select-tip">
+            <div class="tip-percent">5%</div>
+            <div class="tip-percent">10%</div>
+            <div class="tip-percent active">15%</div>
+            <div class="tip-percent">25%</div>
+            <div class="tip-percent">50%</div>
+            <input
+              type="number"
+              class="text-form"
+              id="custom-tip"
+              placeholder="Custom"
+            />
+          </div>
+
+          <div class="tip__form--people">
+            <label for="people-input" class="input-label"
+              >Number of People</label
+            >
+            <input
+              class="text-form text-form__people"
+              type="number"
+              id="people-input"
+              min="1"
+              name="people-cnt"
+            />
+            <p class="input-label error">Value must be greater than zero</p>
+          </div>
+        </div>
+        <div class="tip__result">
+          <div class="tip__result--wrapper">
+            <div class="tip__result--header">
+              <h3>Tip Amount</h3>
+              <p>/ person</p>
+            </div>
+            <div id="tip__result--tip">$4.27</div>
+          </div>
+          <div class="tip__result--wrapper">
+            <div class="tip__result--header">
+              <h3>Total</h3>
+              <p>/ person</p>
+            </div>
+            <div id="tip__result--bill">$32.79</div>
+          </div>
+          <button id="reset">Reset</button>
+        </div>
+      </div>
     </div>
 
-    <div class="attribution">
+    <!-- <div class="attribution">
       Challenge by
       <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
         >Frontend Mentor</a
       >. Coded by <a href="#">Your Name Here</a>.
-    </div>
+    </div> -->
   </body>
 </html>

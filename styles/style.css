@@ -87,10 +87,12 @@ select {
   --light-grayish-cyan: hsl(185, 41%, 84%);
   --very-light-grayish-cyan: hsl(189, 41%, 97%);
   --while: hsl(0, 0%, 100%);
+  --error: #bd6b59;
   --font-size__form-inputs: 24px;
 }
 
 html {
+  box-sizing: border-box;
   font-size: 62.5%;
 }
 
@@ -100,7 +102,7 @@ body {
   background-color: var(--light-grayish-cyan);
 }
 
-form {
+input {
   font-size: var(--font-size__form-inputs);
 }
 
@@ -115,9 +117,208 @@ form {
 
 #main-header {
   letter-spacing: 3px;
-  font-size: 1.6rem;
+  font-size: 2rem;
   color: var(--very-dark-cyan);
 }
 
 .tip-calculator {
+  background-color: var(--while);
+  border-radius: 20px;
+  display: flex;
+  width: 65vw;
+  gap: 2rem;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+
+/* Small Screens */
+@media screen and (max-width: 940px) {
+  .tip-calculator {
+    flex-direction: column;
+
+    gap: 0;
+  }
+
+  .tip-calculator__wrapper {
+    height: auto;
+  }
+}
+
+/* Large Screens */
+@media screen and (min-width: 940px) {
+  .tip-calculator {
+    flex-direction: row;
+  }
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+/* Tip Form Section */
+
+.tip__form {
+  /* padding: 3rem; */
+  border-radius: 2rem;
+  width: 100%;
+  height: 100%;
+}
+
+.tip__form--bill,
+.tip__form--people {
+  margin-bottom: 2rem;
+}
+
+.text-form {
+  background-repeat: no-repeat;
+  background-position: 20px 50%;
+  background-color: var(--very-light-grayish-cyan);
+  border: 2px solid var(--very-light-grayish-cyan);
+  padding: 5px 0;
+  padding-right: 1rem;
+  display: block;
+  width: 100%;
+  text-align: right;
+  margin: 5px 0;
+  border-radius: 5px;
+  color: var(--very-dark-cyan);
+  font-weight: 700;
+  caret-color: var(--strong-cyan);
+}
+
+.text-form:hover {
+  border: 2px solid var(--strong-cyan);
+}
+
+.text-form:focus {
+  outline: none;
+  border: 2px solid var(--strong-cyan);
+}
+
+.text-form__bill {
+  background-image: url(../images/icon-dollar.svg);
+}
+
+.text-form__people {
+  background-image: url(../images/icon-person.svg);
+}
+
+.input-label {
+  color: var(--dark-grayish-cyan);
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+
+.tip__form--select-tip {
+  display: grid;
+  gap: 2rem;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+}
+
+.tip__form--select-tip .text-form {
+  text-align: center;
+  font-size: 20px;
+}
+
+.tip-percent {
+  border-radius: 5px;
+  padding: 1rem 0;
+  color: var(--while);
+  align-self: center;
+  text-align: center;
+  font-size: 20px;
+  font-weight: 700;
+  cursor: pointer;
+  background-color: var(--very-dark-cyan);
+}
+
+.tip-percent:hover {
+  background-color: var(--light-grayish-cyan);
+  color: var(--very-dark-cyan);
+}
+
+.tip-percent.active {
+  background-color: var(--strong-cyan);
+  color: var(--very-dark-cyan);
+}
+
+.error {
+  color: var(--error);
+}
+
+p.error {
+  display: block;
+  text-align: right;
+  font-size: 1.4rem;
+  visibility: hidden;
+}
+
+input.error:focus {
+  border: 2px solid var(--error);
+}
+
+/* Tip Result Section */
+
+.tip__result {
+  padding: 3rem;
+  border-radius: 2rem;
+  background-color: var(--very-dark-cyan);
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+
+.tip__result--wrapper {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+
+.tip__result--header h3 {
+  color: var(--while);
+  font-size: inherit;
+}
+
+.tip__result--wrapper p {
+  color: var(--grayish-cyan);
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+#tip__result--tip,
+#tip__result--bill {
+  color: var(--strong-cyan);
+  font-weight: 700;
+  font-size: 3.2rem;
+}
+
+#reset {
+  width: 100%;
+  padding: 1rem 0;
+  color: var(--very-dark-cyan);
+  font-weight: 700;
+  font-size: 20px;
+  text-transform: uppercase;
+  background-color: var(--strong-cyan);
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: auto;
+}
+
+#reset:hover {
+  background-color: var(--light-grayish-cyan);
 }
